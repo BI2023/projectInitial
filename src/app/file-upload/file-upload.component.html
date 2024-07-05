@@ -1,0 +1,27 @@
+<div class="file-upload-container" style="margin: 20px; text-align: center;">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>File Upload</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <input
+            type="file"
+            id="fileInput"
+            (change)="onFileSelected($event)"
+            style="display: none;"
+          />
+          <button mat-raised-button color="primary" (click)="triggerFileInput()">
+            Choose File
+          </button>
+          <span *ngIf="fileName">{{ fileName }}</span>
+        </div>
+        <div *ngIf="fileName" style="margin-top: 20px;">
+          <button mat-raised-button color="accent" (click)="uploadFile()">
+            Upload
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
